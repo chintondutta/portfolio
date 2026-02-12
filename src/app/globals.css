@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .dark {
+    /* Default Theme: Deep Charcoal Black / Terminal Green / Soft Cyan */
+    --background: 0 0% 5%;
+    --foreground: 111 93% 55%;
+    --card: 0 0% 8%;
+    --card-foreground: 111 93% 55%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 111 93% 55%;
+    --primary: 111 93% 55%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 111 93% 55%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 188 85% 45%;
+    --accent: 188 85% 53%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 111 93% 55% / 0.2;
+    --input: 111 93% 55% / 0.2;
+    --ring: 188 85% 53%;
+    --radius: 0.5rem;
+  }
+
+  body[data-theme='0'] {
+    --background: 0 0% 5%; /* Charcoal */
+    --foreground: 111 93% 55%; /* Green */
+    --accent: 188 85% 53%; /* Cyan */
+  }
+  body[data-theme='1'] {
+    --background: 0 0% 5%; /* Charcoal */
+    --foreground: 188 85% 53%; /* Cyan */
+    --accent: 45 96% 53%; /* Amber */
+  }
+  body[data-theme='2'] {
+    --background: 0 0% 5%; /* Charcoal */
+    --foreground: 45 96% 53%; /* Amber */
+    --accent: 111 93% 55%; /* Green */
+  }
+  body[data-theme='3'] {
+    --background: 224 44% 11%; /* Slate Blue */
+    --foreground: 111 93% 55%; /* Green */
+    --accent: 45 96% 53%; /* Amber */
+  }
+  body[data-theme='4'] {
+    --background: 224 44% 11%; /* Slate Blue */
+    --foreground: 188 85% 53%; /* Cyan */
+    --accent: 111 93% 55%; /* Green */
+  }
+  body[data-theme='5'] {
+    --background: 224 44% 11%; /* Slate Blue */
+    --foreground: 45 96% 53%; /* Amber */
+    --accent: 188 85% 53%; /* Cyan */
+  }
+  body[data-theme='6'] {
+    --background: 158 54% 8%; /* Green-Black */
+    --foreground: 111 93% 55%; /* Green */
+    --accent: 188 85% 53%; /* Cyan */
+  }
+  body[data-theme='7'] {
+    --background: 158 54% 8%; /* Green-Black */
+    --foreground: 188 85% 53%; /* Cyan */
+    --accent: 45 96% 53%; /* Amber */
+  }
+  body[data-theme='8'] {
+    --background: 158 54% 8%; /* Green-Black */
+    --foreground: 45 96% 53%; /* Amber */
+    --accent: 111 93% 55%; /* Green */
+  }
+  
+  /* Light Theme */
+  body[data-theme='9'] {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 188 85% 45%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+  }
+
+  /* Shared adjustments for all themes */
+  body[data-theme] {
+    --card: hsl(var(--background) / 0.5);
+    --card-foreground: hsl(var(--foreground));
+    --popover: hsl(var(--background));
+    --popover-foreground: hsl(var(--foreground));
+    --primary: hsl(var(--foreground));
+    --primary-foreground: hsl(var(--background));
+    --secondary: hsl(var(--accent));
+    --secondary-foreground: hsl(var(--background));
+    --muted: hsl(var(--background));
+    --muted-foreground: hsl(var(--accent));
+    --accent-foreground: hsl(var(--background));
+    --border: hsl(var(--foreground) / 0.2);
+    --input: hsl(var(--foreground) / 0.2);
+    --ring: hsl(var(--accent));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
