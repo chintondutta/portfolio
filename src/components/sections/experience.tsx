@@ -16,7 +16,7 @@ const experiences = [
     ],
   },
   {
-    role: 'Backend Developer Intern',
+    role: 'Backend & DevOps Intern',
     company: 'Yolopment',
     companyUrl: 'https://yolopment.com/',
     location: 'Kolkata',

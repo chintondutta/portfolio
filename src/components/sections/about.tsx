@@ -20,7 +20,7 @@ export function About() {
           <span>cat about.txt</span>
         </h2>
         <Button variant="ghost" asChild>
-          <a href="/Chinton Dutta - Resume.pdf" download>
+          <a href="/resume.pdf" download>
             <Download />
             [Resume]
           </a>
